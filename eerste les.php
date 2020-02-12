@@ -1,45 +1,33 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-    <title>Vliegtuigen Toevoegen</title> 
-	<link rel="stylesheet" href="Eerste les.css"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"/>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="eerste les1.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>  
-<body>  
-<div class="wrapper">
-  <nav class="tabs">
-    <div class="selector"></div>
-    <a class="active" href="eerste les.php"><i class="fa fa-fw fa-home"></i>Home</a>
-    <a href="toevoegen.php"><i class="fas fa-hand-rock"></i>Toevoegen</a>
-    <a href="#"><i class="fas fa-bolt"></i>Thor</a>
-    <a href="#"><i class="fas fa-burn"></i>Marvel</a>
-  </nav>
+<body>
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+    <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+    <a href="eerste les.php"><i class="fa fa-fw fa-home"></i>Home</a><br>
+    <a class="active" href="toevoegen.php"><class="active"><i class="fas fa-plus"></i>Toevoegen</a>
 </div>
 <script>
-	var tabs = $('.tabs');
-	var selector = $('.tabs').find('a').length;
-	//var selector = $(".tabs").find(".selector");
-	var activeItem = tabs.find('.active');
-	var activeWidth = activeItem.innerWidth();
-	$(".selector").css({
-	  "left": activeItem.position.left + "px", 
-	  "width": activeWidth + "px"
-	});
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+    }
 
-	$(".tabs").on("click","a",function(e){
-	  e.preventDefault();
-	  $('.tabs a').removeClass("active");
-	  $(this).addClass('active');
-	  var activeWidth = $(this).innerWidth();
-	  var itemPos = $(this).position();
-	  $(".selector").css({
-		"left":itemPos.left + "px", 
-		"width": activeWidth + "px"
-	  });
-	});
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
 </script>
-<h1>Voer hier vliegtuigen in</h1>  
-<p><em>Welkom</em></p>  
+
+<div class="w3-teal">
+    <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+</div>
+<h1>Welkom op deze website</h1>
+<p><em>Vliegtuigen</em></p>
 </body>  
 </html>  
